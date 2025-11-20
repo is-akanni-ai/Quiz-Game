@@ -29,9 +29,12 @@ func main() {
 
 	fmt.Scan(&answe1, &answe2)
 
-	if answe1 + answe2 == "3090" {
-		fmt.Println("Correct!")
-	}else{
+	switch answe1 + " " + answe2 {
+        case "RTX 3090":
+		    fmt.Println("Correct!")
+	    case "rtx 3090":
+			fmt.Println("Correct!")
+	default:
 		fmt.Println("Incorrect!")
 	}
 
