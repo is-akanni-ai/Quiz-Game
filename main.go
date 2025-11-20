@@ -11,9 +11,28 @@ func main() {
 	fmt.Scan(&name)
 	fmt.Printf("Hello, %s! Let's start the quiz.\n", name)
 	
-	fmt.Println("Enter your age: ")
+	fmt.Printf("Enter your age: ")
 
 	var age uint;
 	fmt.Scan(&age)
-	fmt.Println(age >= 10)
+
+	if age >= 10 {
+		fmt.Println("Yay you can play!")
+	}else{
+		fmt.Printf("Yay ypu can not play!")
+	}
+
+	fmt.Print("Qst 1: What is better?, RTX 3080 or RTX 3090 ")
+
+	var answe1 string;
+	var answe2 string;
+
+	fmt.Scan(&answe1, &answe2)
+
+	if answe1 + answe2 == "3090" {
+		fmt.Println("Correct!")
+	}else{
+		fmt.Println("Incorrect!")
+	}
+	
 }
