@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	// "os"
+	// "bufio"
+	// "strings"
+)
 
 func main() {
 	fmt.Println("Welcome to my quiz game")
@@ -37,17 +42,15 @@ func main() {
 	switch answe1 + " " + answe2 {
         case "RTX 3090":
 		    fmt.Println("Correct!")
-			score ++
-			qstAnswered += 1
-			
+			score ++			
 	    case "rtx 3090":
 			fmt.Println("Correct!")
 			score ++
-			qstAnswered += 1
 	default:
 		fmt.Println("Incorrect!")
-		qstAnswered += 1
 	}
+	qstAnswered++
+
 
 	fmt.Print("Qst 2: How many cores does the AMD Ryzen 9 3900X have? ")
 	var cores uint;
@@ -57,27 +60,33 @@ func main() {
 	if cores == 12 {
 		fmt.Println("Correct!")
 		score ++
-		qstAnswered += 1
 	}else{
 		fmt.Println("Incorrect!")
-		qstAnswered += 1
 	}
+	qstAnswered++
+
 
 	fmt.Print("Qst 3: What does CPU stand for? ")
 
-	var cpuAns string;
-	fmt.Scan(&cpuAns);
+	var cpuAns1 string;
+	var cpuAns2 string;
+	var cpuAns3 string;
 
-	if cpuAns == "Central Processing Unit" || cpuAns == "central processing unit" {
-		fmt.Println("Correct!")
-		score ++
-		qstAnswered += 1
-	}else{
-		fmt.Println("Incorrect!")
-		qstAnswered += 1
+	fmt.Scan(&cpuAns1, &cpuAns2, &cpuAns3);
+
+	switch cpuAns1 + " " + cpuAns2 + " " + cpuAns3 {
+	    case "Central Processing Unit":
+		    fmt.Println("Correct!")
+		    score ++
+	    case "central processing unit":
+		    fmt.Println("Correct!")
+		    score ++
+	    default: 
+		    fmt.Println("Incorrect!")
 	}
 
-	fmt.Print("Qst 4: What is the capital of France? ");
+
+	fmt.Printf("Qst 4: What is the capital of France? ");
 
 	var capital string;
 	fmt.Scan(&capital);
@@ -90,6 +99,20 @@ func main() {
 		fmt.Println("Incorrect!")
 		qstAnswered += 1
 	}
+
+
+	// fmt.Print("Qst 4: What is the capital of France? ")
+    // capital, _ := reader.ReadString('\n')
+    // capital = strings.TrimSpace(capital)
+
+    //  if capital == "Paris" || capital == "paris" {
+    //     fmt.Println("Correct!")
+    //     score++
+    // } else {
+    //     fmt.Println("Incorrect!")
+    // }
+    // qstAnswered++
+
 
 	fmt.Printf("Congrats %v, you have completed the quiz!\n", name)
 	fmt.Printf("You anwered %v correctly out of %v questions, total questions answered  %v. questions \n", score, numOfQst, qstAnswered);
