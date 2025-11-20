@@ -34,5 +34,7 @@ func main() {
 	}else{
 		fmt.Println("Incorrect!")
 	}
+
+	fmt.Print("Qst 2: ")
 	
 }
