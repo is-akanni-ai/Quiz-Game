@@ -85,6 +85,8 @@ func main() {
 		    fmt.Println("Incorrect!")
 	}
 
+	qstAnswered ++
+
 
 	fmt.Printf("Qst 4: What is the capital of France? ");
 
