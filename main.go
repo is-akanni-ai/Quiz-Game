@@ -24,7 +24,7 @@ func main() {
 
 
 	score := 0
-	numOfQst := 0
+	numOfQst := 2
 
 	fmt.Print("Qst 1: What is better?, RTX 3080 or RTX 3090 ")
 
@@ -37,15 +37,15 @@ func main() {
         case "RTX 3090":
 		    fmt.Println("Correct!")
 			score += 5
-			numOfQst += 1
+			// numOfQst += 1
 			
 	    case "rtx 3090":
 			fmt.Println("Correct!")
 			score += 5
-			numOfQst += 1
+			// numOfQst += 1
 	default:
 		fmt.Println("Incorrect!")
-		numOfQst += 1
+		// numOfQst += 1
 	}
 
 	fmt.Print("Qst 2: How many cores does the AMD Ryzen 9 3900X have? ")
@@ -56,13 +56,19 @@ func main() {
 	if cores == 12 {
 		fmt.Println("Correct!")
 		score += 5
-		numOfQst += 1
+		// numOfQst += 1
 	}else{
 		fmt.Println("Incorrect!")
-		numOfQst += 1
+		// numOfQst += 1
 	}
 
 	fmt.Println("Qst 3: ")
 
-	fmt.Printf("You score %v out of 20 with %v questions", score, numOfQst);
+	fmt.Printf("You score %v out of 20 with %v.\n questions", score, numOfQst);
+
+	percent := (float64(score) / float64(numOfQst)) * 100
+
+
+
+	fmt.Printf("You scored:  %v%%", percent);
 }
