@@ -22,6 +22,10 @@ func main() {
 		fmt.Printf("Yay ypu can not play!")
 	}
 
+
+	score := 0
+	numOfQst := 0
+
 	fmt.Print("Qst 1: What is better?, RTX 3080 or RTX 3090 ")
 
 	var answe1 string;
@@ -32,12 +36,33 @@ func main() {
 	switch answe1 + " " + answe2 {
         case "RTX 3090":
 		    fmt.Println("Correct!")
+			score += 5
+			numOfQst += 1
+			
 	    case "rtx 3090":
 			fmt.Println("Correct!")
+			score += 5
+			numOfQst += 1
 	default:
 		fmt.Println("Incorrect!")
+		numOfQst += 1
 	}
 
-	fmt.Print("Qst 2: ")
-	
+	fmt.Print("Qst 2: How many cores does the AMD Ryzen 9 3900X have? ")
+	var cores uint;
+
+	fmt.Scan(&cores);
+
+	if cores == 12 {
+		fmt.Println("Correct!")
+		score += 5
+		numOfQst += 1
+	}else{
+		fmt.Println("Incorrect!")
+		numOfQst += 1
+	}
+
+	fmt.Println("Qst 3: ")
+
+	fmt.Printf("You score %v out of 20 with %v questions", score, numOfQst);
 }
