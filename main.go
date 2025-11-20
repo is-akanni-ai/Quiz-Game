@@ -69,6 +69,5 @@ func main() {
 	percent := (float64(score) / float64(numOfQst)) * 100
 
 
-
 	fmt.Printf("You scored:  %v%%", percent);
 }
